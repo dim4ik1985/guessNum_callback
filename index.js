@@ -47,6 +47,7 @@ function question() {
 
         if (+inputUser === hiddenNumber) {
             counter++;
+            console.log(`Вы угадали число! Попыток: ${counter}`);
             logFile = `Вы угадали число! Попыток: ${counter}`;
             appFile(pathFile, logFile);
             rl.close();
@@ -57,6 +58,7 @@ function question() {
             counter++;
             logFile = `Загаданное число ${compare(inputUser, hiddenNumber)}. Попытка: ${counter + 1}\n`;
             appFile(pathFile, logFile);
+            console.log(`Неверно! Загаданное число ${compare(inputUser, hiddenNumber)}. Попытка: ${counter + 1}`)
             question();
             return
         } else {
